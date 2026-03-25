@@ -699,8 +699,8 @@ def save_boxplots_batch_example():
             'title': 'Zeroshot_delaney_GPT-5'
         }
     ]
-    results_file = os.path.join(script_dir, "../Results/LLM_Results_delaney.json")
-    data_file = os.path.join(script_dir, "../Data/delaney-processed.csv")
+    results_file = os.path.join(script_dir, "../results/LLM_Results_delaney.json")
+    data_file = os.path.join(script_dir, "../data/delaney-processed.csv")
     save_boxplots_from_results(results_file, data_file, combos, output_folder, show_iupac_labels=False, file_prefix="boxplot_delaney", chemical_identifier="smiles", label_name="measured log solubility in mols per litre")
 
 
@@ -871,13 +871,13 @@ metric = "MAE"
 alloy ="AlPowder"
 
 # Base results file (without context learning, includes all finetuned models)
-file_exact_base = os.path.join(script_dir, "../Results/LLM_Results_exact_{}.json".format(alloy))
+file_exact_base = os.path.join(script_dir, "../results/LLM_Results_exact_{}.json".format(alloy))
 
 # Full context learning results file (minimized text overhead)
-#file_exact_context_minimal = os.path.join(script_dir, "../Results/LLM_Results_exact_context_minimal_{}.json".format(alloy))
+#file_exact_context_minimal = os.path.join(script_dir, "../results/LLM_Results_exact_context_minimal_{}.json".format(alloy))
 
 # Context learning with functional groups added
-file_exact_context_funcs_minimal = os.path.join(script_dir, "../Results/LLM_Results_exact_context_funcs_minimal_{}.json".format(alloy))
+file_exact_context_funcs_minimal = os.path.join(script_dir, "../results/LLM_Results_exact_context_funcs_minimal_{}.json".format(alloy))
 
 
 #####################################################
@@ -887,21 +887,21 @@ alloys =["AZ31", "AZ91", "WE43"]
 # Base results file (without context learning, includes all finetuned models)
 files_close_base = []
 for alloy in alloys:
-    files_close_base.append(os.path.join(script_dir, "../Results/LLM_Results_close_{}.json".format(alloy)))
+    files_close_base.append(os.path.join(script_dir, "../results/LLM_Results_close_{}.json".format(alloy)))
 
 # Full context learning results file (minimized text overhead)
 files_close_context_minimal = []
 for alloy in alloys:
-    files_close_context_minimal.append(os.path.join(script_dir, "../Results/LLM_Results_close_context_minimal_{}.json".format(alloy)))
+    files_close_context_minimal.append(os.path.join(script_dir, "../results/LLM_Results_close_context_minimal_{}.json".format(alloy)))
 
 # Context learning with functional groups added
 files_close_context_funcs_minimal = []
 for alloy in alloys:
-    files_close_context_funcs_minimal.append(os.path.join(script_dir, "../Results/LLM_Results_close_context_funcs_minimal_{}.json".format(alloy)))
+    files_close_context_funcs_minimal.append(os.path.join(script_dir, "../results/LLM_Results_close_context_funcs_minimal_{}.json".format(alloy)))
 
 files_close_context_funcs_minimal_anonymized = []
 for alloy in alloys:
-    files_close_context_funcs_minimal_anonymized.append(os.path.join(script_dir, "../Results/LLM_Results_close_context_funcs_minimal_anonymized_{}.json".format(alloy)))
+    files_close_context_funcs_minimal_anonymized.append(os.path.join(script_dir, "../results/LLM_Results_close_context_funcs_minimal_anonymized_{}.json".format(alloy)))
 
 
 ###############################################
@@ -911,7 +911,7 @@ alloys =["AZ31", "AZ91", "WE43"]
 # Context learning with functional groups added
 files_far_context_funcs_minimal = []
 for alloy in alloys:
-    files_far_context_funcs_minimal.append(os.path.join(script_dir, "../Results/LLM_Results_far_context_funcs_minimal_{}.json".format(alloy)))
+    files_far_context_funcs_minimal.append(os.path.join(script_dir, "../results/LLM_Results_far_context_funcs_minimal_{}.json".format(alloy)))
     
 # "All" setting
 alloys =["AZ31", "AZ91", "WE43"]
@@ -919,7 +919,7 @@ alloys =["AZ31", "AZ91", "WE43"]
 # Context learning with functional groups added
 files_all_context_funcs_minimal = []
 for alloy in alloys:
-    files_all_context_funcs_minimal.append(os.path.join(script_dir, "../Results/LLM_Results_all_context_funcs_minimal_{}.json".format(alloy)))
+    files_all_context_funcs_minimal.append(os.path.join(script_dir, "../results/LLM_Results_all_context_funcs_minimal_{}.json".format(alloy)))
 
 
 ###############################################
@@ -927,7 +927,7 @@ for alloy in alloys:
 alloys =["AZ31", "AZ91", "WE43"]
 files_chemprop = []
 for alloy in alloys:
-    files_chemprop.append(os.path.join(script_dir, "../Results/Chemprop_Results_{}.json".format(alloy)))
+    files_chemprop.append(os.path.join(script_dir, "../results/Chemprop_Results_{}.json".format(alloy)))
 
 
 
@@ -950,70 +950,70 @@ results_files.extend(files_all_context_funcs_minimal)
 #results_files.extend(files_chemprop) chemprop results are handled separately
 
 # Data files
-data_file = os.path.join(script_dir, "../Data/ExCorrDatasetClean.csv")
-data_file_delaney = os.path.join(script_dir, "../Data/delaney-processed.csv")
+data_file = os.path.join(script_dir, "../data/ExCorrDatasetClean.csv")
+data_file_delaney = os.path.join(script_dir, "../data/delaney-processed.csv")
 
-
-# Basic evaluation for all results files corrosion
+# Basic evaluation for all results files corrosion (skip if data not available)
 all_results_df = pd.DataFrame()
-for results_file in results_files:
-    results_df = evaluate_results(results_file, data_file)
-    #table_file = results_file.replace("LLM_Results", "LLM_Results_table").replace(".json", ".csv")
-    #with open(table_file, "w") as f:
-    #    results_df.to_csv(f, index=False)
-    # label df with results file
-    results_df["results_file"] = os.path.basename(results_file)
-    all_results_df = pd.concat([all_results_df, results_df], ignore_index=True)
+all_results_df_complete = pd.DataFrame()
+chemprop_data = pd.DataFrame()
+
+if os.path.exists(data_file):
+    for results_file in results_files:
+        if not os.path.exists(results_file):
+            print(f"Skipping missing corrosion results: {results_file}")
+            continue
+        results_df = evaluate_results(results_file, data_file)
+        results_df["results_file"] = os.path.basename(results_file)
+        all_results_df = pd.concat([all_results_df, results_df], ignore_index=True)
+
+    # Create a dataframe with all results
+    columns_needed_llms = ["input_data_type", "approach", "setting", "context_learning_type", "llm", "number_of_training_samples", "alloy", "MAE", "RMSE", "Correlation"]
+
+    all_results_df_complete = all_results_df.copy()
+    all_results_df_complete["setting"] = all_results_df_complete["results_file"].apply(
+        lambda x: "exact" if "exact" in x else ("Close" if "close" in x else ("far" if "far" in x else ("all" if "all" in x else "unknown")))
+    )
+    def _get_context_learning_type_from_filename(filename: str) -> str:
+        if "context_funcs_minimal_anonymized" in filename:
+            return "context_funcs_minimal_anonymized"
+        elif "context_funcs_minimal" in filename:
+            return "context_funcs_minimal"
+        elif "context_minimal" in filename:
+            return "context_minimal"
+        else:
+            return "no_context"
+
+    all_results_df_complete["context_learning_type"] = all_results_df_complete["results_file"].apply(_get_context_learning_type_from_filename)
+    def _get_alloy_from_filename(filename: str) -> str:
+        for alloy in alloys + ["AlPowder"]:
+            if alloy in filename:
+                return alloy
+        return "unknown"
+
+    all_results_df_complete["alloy"] = all_results_df_complete["results_file"].apply(_get_alloy_from_filename)
+    all_results_df_complete = all_results_df_complete[columns_needed_llms]
+
+    for i in range(3):
+        if os.path.exists(files_chemprop[i]):
+            results_df = evaluate_results_chemprop(files_chemprop[i], data_file)
+            results_df["alloy"] = alloys[i]
+            results_df["llm"] = "Chemprop"
+            results_df["context_learning_type"] = "Chemprop"
+            chemprop_data = pd.concat([chemprop_data, results_df], ignore_index=True)
+
+    save_boxplots_batch_example()
+else:
+    print("Corrosion data (ExCorrDatasetClean.csv) not found, skipping corrosion evaluation.")
 
 # Basic evaluation for delaney results
-delaney_results_file = os.path.join(script_dir, "../Results/LLM_Results_delaney_filtered.json")
-
+delaney_results_file = os.path.join(script_dir, "../results/LLM_Results_delaney.json")
 
 ylabel = "Mean Absolute Error / IE"
 if metric == "Correlation":
     ylabel = "Correlation / $\\%$"
 elif metric == "RMSE":
     ylabel = "Root Mean Squared Error / IE"
-
-# Create a dataframe with all results (chemprop results have llm = "Chemprop" and context learning type = "Chemprop")
-columns_needed_llms = ["input_data_type", "approach", "setting", "context_learning_type", "llm", "number_of_training_samples", "alloy", "MAE", "RMSE", "Correlation"]
-
-# create new dataframe and transform results_file column to all missing columns: setting, context_learning_type, alloy
-all_results_df_complete = all_results_df.copy()
-all_results_df_complete["setting"] = all_results_df_complete["results_file"].apply(
-    lambda x: "exact" if "exact" in x else ("Close" if "close" in x else ("far" if "far" in x else ("all" if "all" in x else "unknown")))
-)
-def _get_context_learning_type_from_filename(filename: str) -> str:
-    if "context_funcs_minimal_anonymized" in filename:
-        return "context_funcs_minimal_anonymized"
-    elif "context_funcs_minimal" in filename:
-        return "context_funcs_minimal"
-    elif "context_minimal" in filename:
-        return "context_minimal"
-    else:
-        return "no_context"
-
-
-all_results_df_complete["context_learning_type"] = all_results_df_complete["results_file"].apply(_get_context_learning_type_from_filename)
-def _get_alloy_from_filename(filename: str) -> str:
-    for alloy in alloys + ["AlPowder"]:
-        if alloy in filename:
-            return alloy
-    return "unknown"
-
-all_results_df_complete["alloy"] = all_results_df_complete["results_file"].apply(_get_alloy_from_filename)
-all_results_df_complete = all_results_df_complete[columns_needed_llms]
-
-chemprop_data = pd.DataFrame()
-for i in range(3):
-    results_df = evaluate_results_chemprop(files_chemprop[i], data_file)
-    results_df["alloy"] = alloys[i]
-    results_df["llm"] = "Chemprop"
-    results_df["context_learning_type"] = "Chemprop"
-    chemprop_data = pd.concat([chemprop_data, results_df], ignore_index=True)
-
-
-save_boxplots_batch_example()
 
 # calculate delaney results
 delaney_results_df = evaluate_results_delaney(delaney_results_file, data_file_delaney)
@@ -1032,49 +1032,15 @@ print(delaney_results_df.iloc[15:20])
 # rows 21:25
 print(delaney_results_df.iloc[20:25])
 
-# calculate delaney results for debug files (with error handling for missing files)
-debug_results_df = None
-debug_results_df2 = None
-debug_results_df3 = None
-debug_results_df4 = None
-
-debug_file = os.path.join(script_dir, "../Results/LLM_Results_delaney_debug4.json")
-if os.path.exists(debug_file):
+# calculate delaney zeroshot results
+delaney_zeroshot_file = os.path.join(script_dir, "../results/LLM_Results_delaney_zeroshot.json")
+delaney_zeroshot_df = None
+if os.path.exists(delaney_zeroshot_file):
     try:
-        debug_results_df = evaluate_results_delaney(debug_file, data_file_delaney)
-        print(debug_results_df)
+        delaney_zeroshot_df = evaluate_results_delaney(delaney_zeroshot_file, data_file_delaney)
+        print(delaney_zeroshot_df.iloc[0:5] if not delaney_zeroshot_df.empty else "Empty DataFrame")
     except Exception as e:
-        print(f"Warning: Could not load {debug_file}: {e}")
-
-debug_file2 = os.path.join(script_dir, "../Results/LLM_Results_delaney_debug5.json")
-if os.path.exists(debug_file2):
-    try:
-        debug_results_df2 = evaluate_results_delaney(debug_file2, data_file_delaney)
-        print(debug_results_df2)
-    except Exception as e:
-        print(f"Warning: Could not load {debug_file2}: {e}")
-
-debug_file3 = os.path.join(script_dir, "../Results/LLM_Results_delaney_debug3.json")
-if os.path.exists(debug_file3):
-    try:
-        debug_results_df3 = evaluate_results_delaney(debug_file3, data_file_delaney)
-        print(debug_results_df3.iloc[0:5] if not debug_results_df3.empty else "Empty DataFrame")
-        print(debug_results_df3.iloc[5:10] if len(debug_results_df3) > 5 else "")
-        print(debug_results_df3.iloc[10:15] if len(debug_results_df3) > 10 else "")
-    except Exception as e:
-        print(f"Warning: Could not load {debug_file3}: {e}")
-
-debug_file4 = os.path.join(script_dir, "../Results/LLM_Results_delaney_debug6.json")
-if os.path.exists(debug_file4):
-    #try:
-        debug_results_df4 = evaluate_results_delaney(debug_file4, data_file_delaney)
-        print(debug_results_df4.iloc[0:5] if not debug_results_df4.empty else "Empty DataFrame")
-        print(debug_results_df4.iloc[5:10] if len(debug_results_df4) > 5 else "")
-        print(debug_results_df4.iloc[10:15] if len(debug_results_df4) > 10 else "")
-        print(debug_results_df4.iloc[15:20] if len(debug_results_df4) > 15 else "")
-        print(debug_results_df4.iloc[20:25] if len(debug_results_df4) > 20 else "")
-    #except Exception as e:
-    #    print(f"Warning: Could not load {debug_file4}: {e}")
+        print(f"Warning: Could not load {delaney_zeroshot_file}: {e}")
 
 
 ###############################################
@@ -1394,22 +1360,13 @@ def create_delaney_barplot(
 # Concatenate all Delaney dataframes
 all_delaney_dfs = []
 
-# Add main delaney results
+# Add main delaney results (now contains all ICL data in one file)
 if 'delaney_results_df' in dir() and delaney_results_df is not None and not delaney_results_df.empty:
     all_delaney_dfs.append(delaney_results_df)
 
-# Add debug results if they exist
-if 'debug_results_df' in dir() and debug_results_df is not None and not debug_results_df.empty:
-    all_delaney_dfs.append(debug_results_df)
-
-if 'debug_results_df2' in dir() and debug_results_df2 is not None and not debug_results_df2.empty:
-    all_delaney_dfs.append(debug_results_df2)
-
-if 'debug_results_df3' in dir() and debug_results_df3 is not None and not debug_results_df3.empty:
-    all_delaney_dfs.append(debug_results_df3)
-
-if 'debug_results_df4' in dir() and debug_results_df4 is not None and not debug_results_df4.empty:
-    all_delaney_dfs.append(debug_results_df4)
+# Add zeroshot results
+if 'delaney_zeroshot_df' in dir() and delaney_zeroshot_df is not None and not delaney_zeroshot_df.empty:
+    all_delaney_dfs.append(delaney_zeroshot_df)
 
 # Concatenate all dataframes
 combined_delaney_df = concatenate_delaney_dataframes(*all_delaney_dfs)

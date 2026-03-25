@@ -9,15 +9,15 @@ function main()
     remaining, deleted = delete_old_batch_files(gpt5_batch, remaining - 100)
     #println("Deleted $deleted files")
     script_dir = @__DIR__
-    data_file = joinpath(script_dir, "../Data", "delaney-processed.csv")
-    results_dir = joinpath(script_dir, "../Results")
+    data_file = joinpath(script_dir, "../data", "delaney-processed.csv")
+    results_dir = joinpath(script_dir, "../results")
     if !isdir(results_dir)
         mkdir(results_dir)
     end
 
     # Define experiment parameters
-    save_file = joinpath(results_dir, "LLM_Results_delaney_debug6.json")
-    chat_save_file = joinpath(results_dir, "LLM_Chats_delaney_debug6.json")
+    save_file = joinpath(results_dir, "LLM_Results_delaney.json")
+    chat_save_file = joinpath(results_dir, "LLM_Chats_delaney.json")
 
     data_frame = DataFrame(CSV.File(data_file))
 

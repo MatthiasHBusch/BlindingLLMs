@@ -9,8 +9,8 @@ function main()
     remaining, deleted = delete_old_batch_files(gpt5_batch, remaining - 100)
     #println("Deleted $deleted files")
     script_dir = @__DIR__
-    data_file = joinpath(script_dir, "../Data", "lipophilicity.csv")
-    results_dir = joinpath(script_dir, "../Results")
+    data_file = joinpath(script_dir, "../data", "lipophilicity.csv")
+    results_dir = joinpath(script_dir, "../results")
     if !isdir(results_dir)
         mkdir(results_dir)
     end

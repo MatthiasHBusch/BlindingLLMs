@@ -10,8 +10,8 @@ include(joinpath(@__DIR__, "lib", "FileWritingHelpers.jl"))
 function main(llm)
     script_dir = @__DIR__
     # 
-    data_file = joinpath(script_dir, "../Data", "qm7.csv")
-    out_file = joinpath(script_dir, "../Results", "LLM_Results_qm7_zeroshot.json")
+    data_file = joinpath(script_dir, "../data", "qm7.csv")
+    out_file = joinpath(script_dir, "../results", "LLM_Results_qm7_zeroshot.json")
 
     #llm = gemini_2_5
 

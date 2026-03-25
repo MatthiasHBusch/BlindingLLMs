@@ -10,8 +10,8 @@ include(joinpath(@__DIR__, "lib", "FileWritingHelpers.jl"))
 function main()
     script_dir = @__DIR__
     # 
-    data_file = joinpath(script_dir, "../Data", "delaney-processed.csv")
-    out_file = joinpath(script_dir, "../Results", "LLM_Results_delaney_debug3.json")
+    data_file = joinpath(script_dir, "../data", "delaney-processed.csv")
+    out_file = joinpath(script_dir, "../results", "LLM_Results_delaney_zeroshot.json")
 
     llm = gemini_2_5
 
