@@ -41,7 +41,8 @@ This repository provides the code and data for reproducing the experiments in ou
 │   ├── Run_Delaney_ZeroShot.jl       # 0-shot experiments
 │   ├── Run_Lipophilicity_ZeroShot.jl
 │   ├── Run_QM7_ZeroShot.jl
-│   └── plotResultsICMLPaper.py       # Generate all paper figures
+│   ├── plotResultsICMLPaper.py       # Delaney barplots & boxplots
+│   └── plotQM7LipophilicityResults.py # QM7, Lipophilicity & combined plots
 ├── results/                  # Pre-computed LLM prediction results
 │   ├── LLM_Results_delaney.json
 │   ├── LLM_Results_delaney_zeroshot.json
@@ -87,7 +88,8 @@ All paper figures can be generated from the pre-computed results:
 
 ```bash
 cd src
-python plotResultsICMLPaper.py
+python plotResultsICMLPaper.py            # Delaney barplots & boxplots
+python plotQM7LipophilicityResults.py     # QM7, Lipophilicity & combined plots
 ```
 
 Figures will be saved to the `figures/` directory.
