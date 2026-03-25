@@ -44,9 +44,10 @@ This repository provides the code and data for reproducing the experiments in ou
 │   └── plotResultsICMLPaper.py       # Generate all paper figures
 ├── results/                  # Pre-computed LLM prediction results
 │   ├── LLM_Results_delaney.json
+│   ├── LLM_Results_delaney_zeroshot.json
 │   ├── LLM_Results_lipophilicity.json
-│   ├── LLM_Results_qm7.json
 │   ├── LLM_Results_lipophilicity_zeroshot.json
+│   ├── LLM_Results_qm7.json
 │   └── LLM_Results_qm7_zeroshot.json
 └── figures/                  # Output directory for generated plots
 ```
@@ -63,8 +64,8 @@ This repository provides the code and data for reproducing the experiments in ou
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-cd YOUR_REPO_NAME
+git clone https://github.com/MatthiasHBusch/BlindingLLMs.git
+cd BlindingLLMs
 
 # Install Python dependencies
 pip install -r requirements.txt

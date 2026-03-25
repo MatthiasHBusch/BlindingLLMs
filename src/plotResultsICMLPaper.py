@@ -834,7 +834,7 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 
 
 # Save individual MAE plots
-output_folder = os.path.join(script_dir, "../PaperICMLGraphics")
+output_folder = os.path.join(script_dir, "../figures")
 if file_type == ".eps":
     output_folder = os.path.join(output_folder, "eps")
 if file_type == ".svg":
