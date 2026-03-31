@@ -1,9 +1,9 @@
 # In-Context Molecular Property Prediction with LLMs: A Blinding Study on Memorization and Knowledge Conflicts
 
-[![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
+[![arXiv](https://img.shields.io/badge/arXiv-2603.25857-b31b1b.svg)](https://arxiv.org/abs/2603.25857)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> **Paper:** [arXiv:XXXX.XXXXX](https://arxiv.org/abs/XXXX.XXXXX) *(link will be updated upon publication)*
+> **Paper:** [arXiv:2603.25857](https://arxiv.org/abs/2603.25857)
 
 ## Overview
 
@@ -133,8 +133,8 @@ If you find this work useful, please cite:
 ```bibtex
 @article{busch2026blinding,
   title={In-Context Molecular Property Prediction with LLMs: A Blinding Study on Memorization and Knowledge Conflicts},
-  author={Busch, Matthias and Tacke, Marius and Lamaka, Sviatlana V. and Zheludkevich, Mikhail L. and Linka, Kevin and Cyron, Christian J. and Feiler, Christian and Aydin, Roland C.},
-  journal={arXiv preprint arXiv:XXXX.XXXXX},
+  author={Busch, Matthias and Tacke, Marius and Lamaka, Sviatlana V. and Zheludkevich, Mikhail L. and Cyron, Christian J. and Feiler, Christian and Aydin, Roland C.},
+  journal={arXiv preprint arXiv:2603.25857},
   year={2026}
 }
 ```
