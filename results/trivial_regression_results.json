@@ -1,0 +1,23 @@
+{
+  "Delaney": {
+    "r_heavy_atom_count": -61.1,
+    "ridge_element_60": 83.6,
+    "ridge_char_60": 77.8,
+    "ridge_element_1000": 87.9,
+    "ridge_char_1000": 89.2
+  },
+  "Lipophilicity": {
+    "r_heavy_atom_count": 21.6,
+    "ridge_element_60": 39.7,
+    "ridge_char_60": 39.4,
+    "ridge_element_1000": 42.9,
+    "ridge_char_1000": 40.3
+  },
+  "QM7": {
+    "r_heavy_atom_count": -32.0,
+    "ridge_element_60": 68.3,
+    "ridge_char_60": 87.5,
+    "ridge_element_1000": 67.8,
+    "ridge_char_1000": 90.5
+  }
+}

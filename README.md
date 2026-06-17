@@ -114,6 +114,46 @@ julia Run_QM7_Experiments.jl
 
 > **Note:** Running all experiments requires significant API credits and time. The pre-computed results in `results/` are provided for convenience.
 
+## Revision analyses (JCIM)
+
+The peer-review revision added control datasets and a more detailed memorization
+analysis. All analysis scripts below are pure Python (no API access needed); they
+read the pre-computed JSONs in `results/` and the CSVs in `data/`, and write their
+outputs to `results/` (tables) or `figures/` (plots).
+
+```bash
+cd src
+python memorization_sigdigits.py      # exact-match counts (3 sig. figs)
+python zeroshot_extended_si.py        # precision-scaling retention R21/R32 + accuracy
+python permodel_memorization_si.py    # per-model memorization diagnostics table
+python retention_analysis.py          # retention vs. positive control
+python qm7_digit_clustering.py        # QM7 2nd-digit clustering proof (-> figures/)
+python knn_tanimoto_baseline.py       # kNN-Tanimoto structural baseline
+python trivial_regression_baseline.py # element/character-count ridge baselines
+python bootstrap_correlation_ci.py    # bootstrap 95% confidence intervals
+python significance_analysis.py       # cross-model consistency / sign tests
+python analyze_nonmono.py             # non-monotonic (sine) transform control
+```
+
+New experiment runners (Julia, require API access):
+
+```bash
+cd src
+julia Run_Potency_ZeroShot.jl                     # 2025 antiviral-potency negative control
+julia Run_ZeroShot_ExtraReps.jl                   # additional 0-shot repetitions
+julia Run_Delaney_NonMono.jl                      # non-monotonic sine transform on Delaney
+julia positive_control/Run_PositiveControl_ZeroShot.jl  # atomic weights & boiling points
+```
+
+Added data:
+- `data/antiviral_potency.csv` — 2025 ASAP × Polaris × OpenADMET antiviral potency
+  (post knowledge-cutoff negative control; built by `prepare_potency_dataset.py` /
+  `transform_potency.jl`).
+- `data/delaney-processed-sin.csv` — Delaney with the non-monotonic sine target transform.
+- `src/positive_control/known_atomic_weights.csv`, `known_boiling_points.csv` — positive
+  controls of demonstrably memorized values (the positive-control experiment is
+  self-contained under `src/positive_control/`).
+
 ## Datasets
 
 All datasets are sourced from [MoleculeNet](https://moleculenet.org/):

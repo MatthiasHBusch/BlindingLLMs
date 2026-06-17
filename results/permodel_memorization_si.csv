@@ -1,0 +1,55 @@
+dataset,kind,model,match3,total3,three_sig_pct,m1,m2,R21,m2_lvl3,m3,R32,pearson_r
+Delaney,benchmark,gemini-2.5-pro,24,4360,0.55,1511,186,12.3,164,24,14.6,0.89
+Delaney,benchmark,gemini-2.5-flash,28,4360,0.64,1670,187,11.2,186,28,15.1,0.88
+Delaney,benchmark,gemini-2.5-flash-lite,13,4360,0.3,1164,119,10.2,109,12,11.0,0.68
+Delaney,benchmark,gpt-4.1,17,4360,0.39,1396,145,10.4,119,17,14.3,0.86
+Delaney,benchmark,gpt-4.1-mini,12,4360,0.28,1262,141,11.2,142,12,8.5,0.78
+Delaney,benchmark,gpt-4.1-nano,6,4360,0.14,918,89,9.7,67,6,9.0,0.41
+Delaney,benchmark,gpt-5,16,4360,0.37,1254,145,11.6,120,16,13.3,0.85
+Delaney,benchmark,gpt-5-mini,8,4360,0.18,1189,118,9.9,106,8,7.5,-0.02
+Delaney,benchmark,gpt-5-nano,6,4360,0.14,577,54,9.4,18,3,16.7,0.63
+Lipophilicity,benchmark,gemini-2.5-pro,14,2800,0.5,1257,141,11.2,100,14,14.0,0.47
+Lipophilicity,benchmark,gemini-2.5-flash,10,2800,0.36,990,111,11.2,67,10,14.9,0.43
+Lipophilicity,benchmark,gemini-2.5-flash-lite,8,2800,0.29,1285,145,11.3,113,8,7.1,0.43
+Lipophilicity,benchmark,gpt-4.1,16,2800,0.57,1566,177,11.3,125,16,12.8,0.44
+Lipophilicity,benchmark,gpt-4.1-mini,7,2800,0.25,1448,171,11.8,135,7,5.2,0.36
+Lipophilicity,benchmark,gpt-4.1-nano,0,2800,0.0,1191,119,10.0,0,0,,0.29
+Lipophilicity,benchmark,gpt-5,17,2800,0.61,1423,169,11.9,120,17,14.2,0.38
+Lipophilicity,benchmark,gpt-5-mini,10,2800,0.36,1331,164,12.3,84,10,11.9,0.39
+Lipophilicity,benchmark,gpt-5-nano,0,2800,0.0,1375,179,13.0,2,0,0.0,0.25
+QM7,benchmark,gemini-2.5-pro,61,4995,1.22,3179,655,20.6,797,59,7.4,0.55
+QM7,benchmark,gemini-2.5-flash,6,4995,0.12,230,37,16.1,41,6,14.6,-0.31
+QM7,benchmark,gemini-2.5-flash-lite,3,4995,0.06,560,33,5.9,37,3,8.1,-0.01
+QM7,benchmark,gpt-4.1,0,4995,0.0,0,0,,0,0,,0.11
+QM7,benchmark,gpt-4.1-mini,0,4995,0.0,0,0,,0,0,,-0.04
+QM7,benchmark,gpt-4.1-nano,0,4995,0.0,0,0,,0,0,,-0.01
+QM7,benchmark,gpt-5,2,4995,0.04,333,43,12.9,46,2,4.3,0.01
+QM7,benchmark,gpt-5-mini,0,4995,0.0,22,3,13.6,3,0,0.0,0.02
+QM7,benchmark,gpt-5-nano,0,4995,0.0,5,0,0.0,1,0,0.0,0.03
+Antiviral potency,control,gemini-2.5-pro,15,4570,0.33,1414,144,10.2,146,15,10.3,0.41
+Antiviral potency,control,gemini-2.5-flash,1,4570,0.02,850,60,7.1,2,0,0.0,0.17
+Antiviral potency,control,gemini-2.5-flash-lite,12,4570,0.26,1159,143,12.3,74,12,16.2,0.21
+Antiviral potency,control,gpt-4.1,2,4570,0.04,1022,102,10.0,23,2,8.7,0.69
+Antiviral potency,control,gpt-4.1-mini,0,4570,0.0,650,69,10.6,1,0,0.0,0.7
+Antiviral potency,control,gpt-4.1-nano,0,4570,0.0,648,57,8.8,0,0,,0.03
+Antiviral potency,control,gpt-5,11,4570,0.24,1122,96,8.6,95,11,11.6,0.46
+Antiviral potency,control,gpt-5-mini,7,4570,0.15,1754,122,7.0,101,7,6.9,0.37
+Antiviral potency,control,gpt-5-nano,4,4570,0.09,834,87,10.4,10,4,40.0,0.32
+Atomic weights,control,gemini-2.5-pro,205,205,100.0,205,205,100.0,205,205,100.0,1.0
+Atomic weights,control,gemini-2.5-flash,196,205,95.61,201,201,100.0,201,196,97.5,1.0
+Atomic weights,control,gemini-2.5-flash-lite,188,205,91.71,193,193,100.0,193,188,97.4,0.95
+Atomic weights,control,gpt-4.1,191,205,93.17,196,196,100.0,196,191,97.4,0.7
+Atomic weights,control,gpt-4.1-mini,200,205,97.56,205,205,100.0,205,200,97.6,1.0
+Atomic weights,control,gpt-4.1-nano,200,205,97.56,201,201,100.0,201,196,97.5,1.0
+Atomic weights,control,gpt-5,193,205,94.15,200,198,99.0,198,193,97.5,0.67
+Atomic weights,control,gpt-5-mini,199,205,97.07,204,204,100.0,204,199,97.5,1.0
+Atomic weights,control,gpt-5-nano,197,205,96.1,203,203,100.0,202,196,97.0,0.99
+Boiling points,control,gemini-2.5-pro,154,205,75.12,188,175,93.1,159,147,92.5,0.91
+Boiling points,control,gemini-2.5-flash,123,205,60.0,185,168,90.8,141,118,83.7,0.95
+Boiling points,control,gemini-2.5-flash-lite,76,205,37.07,136,99,72.8,82,68,82.9,0.8
+Boiling points,control,gpt-4.1,90,205,43.9,171,136,79.5,104,85,81.7,0.91
+Boiling points,control,gpt-4.1-mini,91,205,44.39,139,120,86.3,98,86,87.8,0.88
+Boiling points,control,gpt-4.1-nano,32,205,15.61,104,58,55.8,40,27,67.5,0.66
+Boiling points,control,gpt-5,96,205,46.83,140,123,87.9,113,90,79.6,0.81
+Boiling points,control,gpt-5-mini,102,205,49.76,152,130,85.5,111,97,87.4,0.9
+Boiling points,control,gpt-5-nano,14,205,6.83,83,52,62.7,24,13,54.2,0.59
