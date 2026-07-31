@@ -21,3 +21,11 @@ Thumbs.db
 *.log
 *.out
 *.synctex.gz
+# Chat transcripts: 12-70 MB each, not needed to reproduce the analyses
+src/positive_control/*_Chats.json
+
+# Scratch from the sweeps
+src/positive_control/backup_2runs/
+src/positive_control/*.err
+src/positive_control/*.log
+src/positive_control/analysis_*.txt
